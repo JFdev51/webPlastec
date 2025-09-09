@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlasTec Patagonia - Inyectora de Plástico</title>
+  <!-- Tailwind para estilos -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- SweetAlert2 para notificaciones -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Fuente Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde-oscuro: #234F2A;
+      --verde-claro: #4B7758;
+      --azul-rio: #3C7E75;
+      --beige: #fff0c1;
+    }
+    body {
+      background-color: var(--beige);
+      color: var(--verde-oscuro);
+      font-family: 'Montserrat', sans-serif;
+    }
+    .btn {
+      background-color: var(--verde-oscuro);
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: var(--verde-claro);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card {
+      background-color: white;
+      border-radius: 1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      padding: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .form-control {
+      border: 1px solid #d2d6dc;
+      border-radius: 0.375rem;
+      padding: 0.75rem;
+      width: 100%;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    .form-control:focus {
+      border-color: var(--verde-claro);
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba(72, 121, 88, 0.25);
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+    .animate-slide {
+      animation: slide 12s infinite;
+    }
+    
+    .eco-icon {
+      font-size: 3rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado con eslogan -->
+  <header class="p-12 text-center shadow-lg" style="background-color: var(--verde-oscuro); color: white;">
+    <h1 class="text-5xl font-extrabold tracking-wide">PlasTec Patagonia</h1>
+    <p class="text-2xl mt-4">Innovación en Inyectoras de Plástico y Compromiso Ambiental</p>
+    <p class="text-xl italic mt-4">"Una tapa más para PlasTec, es una menos para el mar"</p>
+  </header>
+
+  <!-- Banner de imágenes -->
+  <section class="relative w-full overflow-hidden h-96">
+    <div class="absolute inset-0 flex animate-slide">
+      <!-- Banner 1: Logo ocupando todo el banner -->
+      <div class="min-w-full h-full flex items-center justify-center bg-[var(--verde-claro)]">
+        <img src="Logo.png" alt="Logo PlasTec" class="w-full h-full object-cover">
+      </div>
+      <!-- Banner 2 -->
+      <div class="min-w-full h-full flex items-center justify-center bg-[var(--azul-rio)] text-white text-3xl font-bold">
+        <img src="banner1mejor.jpg" alt="banner1" class="w-full h-full object-cover">
+      </div>
+      <!-- Banner 3 -->
+      <div class="min-w-full h-full flex items-center justify-center bg-[var(--verde-oscuro)] text-white text-3xl font-bold">
+       <img src="banner2bienecho.jpg" alt="banner2" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Secciones principales -->
+  <main class="max-w-7xl mx-auto p-10 space-y-12">
+    <!-- Compromiso con el Medio Ambiente -->
+    <section class="card">
+      <h2 class="text-3xl font-bold mb-6 text-center">Compromiso con el Medio Ambiente</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        En PlasTec Patagonia, entendemos la urgencia de la crisis ambiental causada por los plásticos. Nuestra misión es transformar esta problemática en una solución sostenible a través de la innovación tecnológica y procesos responsables.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="text-center p-6 rounded-lg bg-[var(--beige)]">
+          <i class="fas fa-recycle eco-icon"></i>
+          <h3 class="text-xl font-bold mb-3">Reciclaje Integral</h3>
+          <p>Implementamos sistemas de recolección y procesamiento de plásticos para transformar desechos en materia prima de calidad.</p>
+        </div>
+        <div class="text-center p-6 rounded-lg bg-[var(--beige)]">
+          <i class="fas fa-leaf eco-icon"></i>
+          <h3 class="text-xl font-bold mb-3">Economía Circular</h3>
+          <p>Fomentamos un modelo de producción donde los materiales se mantienen en uso el mayor tiempo posible, reduciendo residuos.</p>
+        </div>
+        <div class="text-center p-6 rounded-lg bg-[var(--beige)]">
+          <i class="fas fa-water eco-icon"></i>
+          <h3 class="text-xl font-bold mb-3">Protección Marina</h3>
+          <p>Por cada tonelada de plástico procesada, destinamos recursos a iniciativas de limpieza de costas y fondos marinos.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-6 mt-8">
+        <div class="border-2 border-dashed rounded-lg h-56 flex items-center justify-center text-gray-500 bg-[var(--beige)] text-lg">
+           <img src="procesos.jpeg" alt="procesos" class="w-full h-full object-cover"> 
+        </div>
+        <div class="border-2 border-dashed rounded-lg h-56 flex items-center justify-center text-gray-500 bg-[var(--beige)] text-lg">
+          <img src="medioambiente.png" alt="Logo PlasTec" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section class="card">
+      <h2 class="text-3xl font-bold mb-6 text-center">¿Quiénes Somos?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-lg leading-relaxed mb-4">
+            PlasTec Patagonia nace en el corazón de la Patagonia Argentina, inspirados por la belleza natural que nos rodea y la necesidad imperante de protegerla. Somos un equipo de ingenieros, diseñadores y ambientalistas apasionados por crear soluciones tecnológicas que armonicen la producción industrial con el cuidado del planeta.
+          </p>
+          <p class="text-lg leading-relaxed mb-4">
+            Nuestra experiencia combina conocimientos técnicos avanzados con un profundo respeto por los ecosistemas, desarrollando maquinaria que cumple con los más altos estándares de calidad y sostenibilidad.
+          </p>
+          <div class="bg-[var(--verde-oscuro)] text-white p-4 rounded-lg">
+            <p class="italic text-center">"Innovación tecnológica al servicio del medio ambiente"</p>
+          </div>
+        </div>
+        <div class="border-2 border-dashed rounded-lg h-80 flex items-center justify-center text-gray-500 bg-[var(--beige)] text-lg">
+          <img src="grupo.jpeg" alt="Grupo" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestra Solución: Inyectora -->
+    <section class="card">
+      <h2 class="text-3xl font-bold mb-6 text-center">Nuestra Solución: Inyectora de Plástico Sostenible</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        Hemos desarrollado una inyectora de plástico de alta precisión y eficiencia energética, específicamente diseñada para trabajar con materiales reciclados. Nuestra tecnología permite transformar desechos plásticos en productos útiles de alta calidad, cerrando el ciclo de la economía circular.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div class="border-2 border-dashed rounded-lg h-80.3 flex items-center justify-center text-gray-500 bg-[var(--beige)] text-lg">
+          <img src="proyecto2.jpeg" alt="Proyecto" class="w-full h-full object-cover">
+        </div>
+        <div class="bg-[var(--beige)] p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-bold mb-4">Características Principales</h3>
+          <ul class="space-y-10 text-lg">
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Capacidad de procesar plásticos 100% reciclados</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Diseño eficiente que reduce el consumo energético hasta un 40%</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Sistema de control digital para máxima precisión</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Mantenimiento simplificado y bajo costo operativo</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Fabricación local con garantía y servicio técnico permanente</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Producción a demanda</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Fácil limpieza</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Semindependencia energética</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Inversión escalable</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Ayuda al medio ambiente</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Porcentaje de ventas destinado a fundaciones</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Rapido ajustes</span></li>
+            <li class="flex items-start"><i class="fas fa-check-circle text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Control de calidad estandarizado</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moldes Compatibles -->
+    <section class="card">
+      <h2 class="text-3xl font-bold mb-6 text-center">Moldes Compatibles y Personalizados</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        Complementamos nuestra inyectora con moldes de alta precisión desarrollados internamente. Diseñamos y fabricamos moldes según sus necesidades específicas, optimizados para trabajar con materiales reciclados y maximizar la productividad.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div class="border-2 border-dashed rounded-lg h-70 flex items-center justify-center text-gray-500 bg-[var(--beige)] text-lg">
+          <img src="molde3.jpeg" alt="Molde" class="w-full h-full object-cover">
+        </div>
+        <div class="bg-[var(--beige)] p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-bold mb-4">Ventajas de Nuestros Moldes</h3>
+          <ul class="space-y-8 text-lg">
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Diseñados específicamente para materiales reciclados</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Fabricación local con materiales de primera calidad</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Alta durabilidad y resistencia al desgaste</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Optimizados para maximizar la eficiencia productiva</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Posibilidad de personalización según requerimientos</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Reducción de desperdicio</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Rapidez en producción</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Compatibilidad con distintos plásticos</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Optimización de costos a largo plazo</span></li>
+            <li class="flex items-start"><i class="fas fa-cog text-[var(--verde-oscuro)] mt-1 mr-2"></i> <span>Escalabilidad</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Solicitud de orden -->
+    <section class="card">
+      <h2 class="text-3xl font-bold mb-6 text-center">Solicitud de Información</h2>
+      <p class="text-lg text-center mb-6">¿Interesado en nuestras soluciones? Complete el formulario y nos contactaremos a la brevedad.</p>
+      
+      <!-- Formulario adaptado para PlasTec -->
+      <div class="max-w-2xl mx-auto">
+        <form id="plastec-contact-form">
+          <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Ingrese su nombre completo"
+              required
+            />
+          </div>
+          
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico:</label>
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ingrese su email"
+              required
+            />
+          </div>
+          
+          <div class="mb-4">
+            <label for="company" class="block text-gray-700 font-medium mb-2">Empresa (opcional):</label>
+            <input
+              class="form-control"
+              type="text"
+              name="company"
+              id="company"
+              placeholder="Nombre de su empresa"
+            />
+          </div>
+          
+          <div class="mb-4">
+            <label for="contact_number" class="block text-gray-700 font-medium mb-2">Teléfono de contacto:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="contact_number"
+              id="contact_number"
+              placeholder="Número de teléfono"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="product_interest" class="block text-gray-700 font-medium mb-2">Producto de interés:</label>
+            <select class="form-control" name="product_interest" id="product_interest" required>
+              <option value="" disabled selected hidden>Seleccione una opción</option>
+              <option value="Inyectora de plástico">Inyectora de plástico</option>
+              <option value="Molde personalizado">Molde personalizado</option>
+              <option value="Combo inyectora + molde">Combo inyectora + molde</option>
+              <option value="Servicio de consultoría">Servicio de consultoría</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          
+          <div class="mb-4">
+            <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje o consulta:</label>
+            <textarea
+              class="form-control"
+              name="message"
+              id="message"
+              placeholder="Describa su consulta o requerimiento"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          
+          <div class="mb-6">
+            <div class="flex items-start">
+              <input class="form-check-input mt-1 mr-2" type="checkbox" id="terms" required />
+              <label class="form-check-label text-gray-700" for="terms">
+                Al marcar esta casilla certifico que estoy de acuerdo con los 
+                <a href="#" class="text-[var(--verde-oscuro)] hover:underline">términos y políticas de datos</a>.
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn w-full py-3 rounded-lg">
+            <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitud
+          </button>
+        </form>
+      </div>
+      <p id="status" class="mt-6 font-semibold text-center"></p>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="p-10 mt-10" style="background-color: var(--verde-oscuro); color: white;">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-bold text-xl mb-4">Redes Sociales</h3>
+        <div class="flex space-x-4 justify-center md:justify-start">
+          <a href="#" class="text-2xl hover:text-[var(--beige)]"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-2xl hover:text-[var(--beige)]"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-2xl hover:text-[var(--beige)]"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-2xl hover:text-[var(--beige)]"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div>
+        <h3 class="font-bold text-xl mb-4">Contacto</h3>
+        <p><i class="fas fa-map-marker-alt mr-2"></i> Calle 3275 Numero129,9000 Comodoro Rivadavia,Chubut</p>
+        <p class="mt-2"><i class="fas fa-phone mr-2"></i> +54 297-443-4653</p>
+        <p class="mt-2"><i class="fas fa-envelope mr-2"></i> info@plastecpatagonia.com</p>
+      </div>
+      
+      <div>
+        <h3 class="font-bold text-xl mb-4">Suscríbete a nuestro newsletter</h3>
+        <div class="flex">
+          <input type="email" placeholder="Tu email" class="px-4 py-2 rounded-l text-gray-800 w-full">
+          <button class="bg-[var(--verde-claro)] px-4 py-2 rounded-r hover:bg-[var(--azul-rio)]">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <p class="text-sm mt-2">Recibe noticias sobre innovación y sostenibilidad</p>
+      </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-[var(--verde-claro)] text-center">
+      <p>© 2025 PlasTec Patagonia - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // Script para enviar el formulario a Google Sheets
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzehH7JFzq2GmwRAqMBe_5TCVPEuLPgcFi5hrzXHjI19N3rJxMwaG1uVkA3Ii7ldoE/exec";
+    const form = document.getElementById("plastec-contact-form");
+    
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      // Mostrar indicador de carga
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      submitBtn.disabled = true;
+      
+      // Preparar datos del formulario
+      const formData = new FormData(form);
+      
+      // Convertir FormData a objeto para debug
+      const formDataObj = {};
+      for (let [key, value] of formData.entries()) {
+        formDataObj[key] = value;
+      }
+      
+      console.log("Datos a enviar:", formDataObj);
+      
+      // Enviar datos a Google Sheets
+      fetch(scriptURL, { 
+        method: "POST", 
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error en la respuesta del servidor');
+        }
+        return response.text();
+      })
+      .then(data => {
+        console.log('Respuesta completa:', data);
+        
+        // Restaurar botón
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Mostrar mensaje de éxito
+        Swal.fire({
+          title: '¡Éxito!',
+          text: 'Su solicitud ha sido enviada correctamente. Nos contactaremos a la brevedad.',
+          icon: 'success',
+          confirmButtonColor: '#234F2A'
+        });
+        
+        // Limpiar formulario
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        
+        // Restaurar botón
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Mostrar mensaje de error
+        Swal.fire({
+          title: 'Error',
+          text: 'Ha ocurrido un error al enviar el formulario. Por favor, intente nuevamente.',
+          icon: 'error',
+          confirmButtonColor: '#234F2A'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
